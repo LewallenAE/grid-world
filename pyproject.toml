@@ -1,0 +1,37 @@
+[project]
+name = "gridworld"
+version = "0.1.0"
+description = "Production RL infrastructure: environment, training, evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.2.6",
+    "pydantic>=2.13.4",
+    "scikit-learn>=1.7.2",
+    "torch>=2.12.1",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0", 
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=23.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I"]  # pycodestyle, pyflakes, warnings, isort
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
